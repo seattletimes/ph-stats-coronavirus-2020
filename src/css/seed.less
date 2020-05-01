@@ -1,0 +1,139 @@
+@import "seattletimes";
+
+
+
+.container {
+  max-width: 630px;
+  font-family: @df-sans;
+  margin: 1em auto;
+
+  @media @tablet {
+    margin: 10px;
+  }
+
+  .graphic-hed {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .graphic-chatter {
+    margin-top: 10px;
+    line-height: 1.2em;
+  }
+
+  .note {
+    font-size: 0.9em;
+  }
+
+  figcaption {
+    clear: both;
+  }
+
+
+
+  .spectrum {
+
+
+    .better, .worse {
+      width: 33%;
+      font-size: 0.9em;
+      display: inline-block;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: top;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .king {
+      width: 32%;
+      font-size: 1.5em;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+
+
+
+  .box {
+
+    margin: 1.2em auto;
+    // font-weight: bold;
+
+    .col {
+      display: inline-block;
+      width: 40%;
+      vertical-align: middle;
+      line-height: 1.2em;
+
+
+
+      &.left {
+        width: 10%;
+        text-align: right;
+
+        @media @tablet {
+          width: 0%;
+        }
+      }
+      &.right {
+        text-align: left;
+        width: 50%;
+
+        @media @tablet {
+          width: 48%;
+          font-size: 0.9em;
+        }
+      }
+    }
+
+
+    .highlight {
+      font-weight: bolder;
+      font-size: 3em;
+      text-transform: uppercase;
+      vertical-align: middle;
+      width: 33%;
+      display: inline-block;
+      text-align: center;
+      margin: 0 7px 0 0;
+      padding: 7px 10px;
+      line-height: 1.1em;
+
+      @media @tablet {
+        width: 48%;
+        padding: 5px 5px;
+        font-size: 2.8em;
+      }
+
+      span {
+        display: block;
+        font-size: 0.35em;
+        line-height: 1em;
+        text-transform: none;
+        font-weight: normal;
+
+        @media @tablet {
+          font-size: 0.3em;
+        }
+      }
+
+      .percent {
+        display: inline;
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 3px;
+        font-size: 0.4em;
+      }
+
+      &.green {
+        background-color: #9aca9a;
+      }
+      &.red {
+        background-color: #fdc45d;
+      }
+    }
+  }
+}

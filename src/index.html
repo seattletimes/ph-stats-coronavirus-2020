@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <%= t.include("partials/_head.html", grunt.data.json) %>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_dataLayer.html") %>
+      <%= t.include("partials/_gtm.html") %>
+    <% } %>
+    <script src="https://kit.fontawesome.com/9d53be7224.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <% if (json.project.production && !json.project.embedded) { %>
+      <%= t.include("partials/_gtmNoScript.html") %>
+    <% } %>
+    <responsive-child>
+      <!-- content goes here -->
+
+
+      <div class="container">
+        <!-- <div class="spectrum">
+          <div class="better"></div>
+          <div class="king">King County</div>
+          <div class="worse"></div>
+        </div> -->
+        <h3 class="graphic-hed">
+            Homelessness during coronavirus
+        </h3>
+        <h4 class="graphic-chatter">A snapshot of factors relating to homelessness during the pandemic.</h4>
+
+
+        <div class="box red">
+          <div class="col left"></div><span class="highlight red">11,199<span>people living homeless in King County</span></span> <div class="col right">This is based on the 2019 point-in-time count.</div>
+        </div>
+
+        <div class="box green">
+          <div class="col left"></div> <span class="highlight red">11<span>hygiene stations added</span></span><div class="col right"> Since the end of March, portable toilets and hand-washing stations have been installed by the city of Seattle.</div>
+        </div>
+
+        <div class="box red">
+          <div class="col left"></div><span class="highlight red">72<span>new permanent shelter units*</span></span> <div class="col right"> The Low Income Housing Institute opened two enhanced shelter sites and expanded an existing site in Seattle that will remain in operation after the crisis.</div>
+        </div>
+
+        <div class="box green">
+          <div class="col left"></div>  <span class="highlight red">609<span>people moved to hotels</span></span><div class="col right"> Through hotel leasing and vouchers, King County has moved 609 people experiencing homelessness into hotels as of May 1.</div>
+        </div>
+
+        <div class="box green">
+          <div class="col left"></div> <span class="highlight red">96<span class="percent">%</span><span>more food-assistance applications</span></span><div class="col right"> From the first week of March to mid-April, applications for state and federal food-assistance programs nearly doubled in Washington state.</div>
+        </div>
+
+        <div class="box green">
+          <div class="col left"></div>  <span class="highlight red">10.6<span class="percent">%</span><span>of Washingtonians behind on April's rent</span></span><div class="col right"> This is based on more than 140,000 Washington rental units surveyed by the Washington Multi-Family Housing Association.</div>
+        </div>
+
+
+
+        <div class="note">*Some shelter units can hold more than one person.</div>
+
+        <figcaption>
+          <p class="data-source">Sources: The city of Seattle, King County, All Home King County, LIHI, Washington Department of Social and Health Services and Washington Multi-Family Housing Association.</p>
+          <p class="art-credit">Lauren Flannery / The Seattle Times</p>
+        </figcaption>
+
+
+
+      </div>
+    </responsive-child>
+
+    <script src="app.js" async></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_analytics.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
